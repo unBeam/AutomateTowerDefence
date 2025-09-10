@@ -1,0 +1,10 @@
+<linker>
+	<assembly fullname="Assembly-CSharp">
+		<type fullname="PlayerMoveConfigSO" preserve="all"/>
+		<type fullname="PricesConfigSO" preserve="all"/>
+		<!-- если есть аудио-конфиг -->
+		<type fullname="AudioConfigSO" preserve="all"/>
+		<!-- базовый класс, если рефлексия трогает его поля/методы -->
+		<type fullname="LiveConfigSO" preserve="all"/>
+	</assembly>
+</linker>
