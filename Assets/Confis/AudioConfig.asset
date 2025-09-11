@@ -19,7 +19,7 @@ MonoBehaviour:
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-    DefaultVolume: 0.305
-    DefaultPitch: 0.91
+    DefaultVolume: 1
+    DefaultPitch: 1
     DefaultLoop: 0
     DefaultAddrOverride: sfx.click

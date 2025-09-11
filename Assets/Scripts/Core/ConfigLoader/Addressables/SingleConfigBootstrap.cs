@@ -66,7 +66,14 @@ public class SingleConfigBootstrap : MonoBehaviour
         {
             ConfigAutoApplier.Apply(flat, GetTargets(), "Version");
 
+            string origin   = UrlUtil.GetOrigin(_configUrl);
+            string basePath = Flat.GetString(flat, "Audio.BasePath", "/audio/");
+            string defExt   = Flat.GetString(flat, "Audio.DefaultExt", ".mp3");
+            string cdnBase  = UrlUtil.Join(origin, basePath);
+
+            _audioReg.SetCdnBase(cdnBase, defExt);
             await _audioReg.Apply(flat);
+
             Debug.Log("[BOOT][AUDIO] overrides applied from flat JSON");
         }
         else
@@ -84,6 +91,7 @@ public class SingleConfigBootstrap : MonoBehaviour
             Debug.Log($"[Loading] init finished in {s:0.000}s");
         }
     }
+
 
     private async UniTask LoadScriptables()
     {
