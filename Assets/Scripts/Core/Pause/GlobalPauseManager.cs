@@ -263,11 +263,11 @@ public class GlobalPauseManager : MonoBehaviour, IPauseExempt
                 {
                     Kinematic = rb.isKinematic,
                     Detect = rb.detectCollisions,
-                    Vel = rb.velocity,
+                    Vel = rb.linearVelocity,
                     AngVel = rb.angularVelocity
                 };
 
-                rb.velocity = Vector3.zero;
+                rb.linearVelocity = Vector3.zero;
                 rb.angularVelocity = Vector3.zero;
                 rb.detectCollisions = false;
                 rb.isKinematic = true;
@@ -286,7 +286,7 @@ public class GlobalPauseManager : MonoBehaviour, IPauseExempt
             RB3DState st = kv.Value;
             rb.isKinematic = st.Kinematic;
             rb.detectCollisions = st.Detect;
-            rb.velocity = st.Vel;
+            rb.linearVelocity = st.Vel;
             rb.angularVelocity = st.AngVel;
         }
         _frozenRB3D.Clear();
@@ -313,7 +313,7 @@ public class GlobalPauseManager : MonoBehaviour, IPauseExempt
                 RB2DState st = new RB2DState
                 {
                     Simulated = rb.simulated,
-                    Vel = rb.velocity,
+                    Vel = rb.linearVelocity,
                     AngVel = rb.angularVelocity
                 };
 
@@ -332,7 +332,7 @@ public class GlobalPauseManager : MonoBehaviour, IPauseExempt
             Rigidbody2D rb = kv.Key;
             RB2DState st = kv.Value;
             rb.simulated = st.Simulated;
-            rb.velocity = st.Vel;
+            rb.linearVelocity = st.Vel;
             rb.angularVelocity = st.AngVel;
         }
         _frozenRB2D.Clear();

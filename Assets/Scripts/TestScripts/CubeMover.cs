@@ -60,8 +60,8 @@ public class CubeMover : MonoBehaviour
 
     private void FixedUpdate()
     {
-        var v = _rb.velocity;
+        var v = _rb.linearVelocity;
         v.x = _axis * _speed;
-        _rb.velocity = v;
+        _rb.linearVelocity = v;
     }
 }
