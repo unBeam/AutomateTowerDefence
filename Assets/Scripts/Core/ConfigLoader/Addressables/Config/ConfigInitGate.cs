@@ -1,9 +1,8 @@
-﻿using System;
-using Cysharp.Threading.Tasks;
+﻿using Cysharp.Threading.Tasks;
 
 public static class ConfigInitGate
 {
-    private static UniTaskCompletionSource<bool> _tcs = new UniTaskCompletionSource<bool>();
+    private static UniTaskCompletionSource<bool> _tcs = new();
     private static bool _isReady;
 
     public static bool IsReady => _isReady;

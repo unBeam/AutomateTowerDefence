@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad547d08cab4f4ca492dfe13e5170f2, type: 3}
+  m_Name: ScriptSettings
+  m_EditorClassIdentifier: 
+  Entries:
+  - CharacterName: Rose
+    ScriptKey: Meet_Rose
+    RLUnlock: 0
+    RLSuccess: 0
+    RPReward: 0
+    Description: 
+  - CharacterName: Rose
+    ScriptKey: Talk_1
+    RLUnlock: 1
+    RLSuccess: 1
+    RPReward: 10
+    Description: 
+  - CharacterName: Rose
+    ScriptKey: Compliment_1
+    RLUnlock: 1
+    RLSuccess: 1
+    RPReward: 15
+    Description: 
+  - CharacterName: Rose
+    ScriptKey: Spicy_compl_1
+    RLUnlock: 1
+    RLSuccess: 1
+    RPReward: 20
+    Description: 
+  - CharacterName: Rose
+    ScriptKey: Rose_blowjob
+    RLUnlock: 1
+    RLSuccess: 1
+    RPReward: 30
+    Description: 

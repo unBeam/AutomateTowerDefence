@@ -21,4 +21,6 @@ public static class ConfigHub
         => _map.TryGetValue(key, out var so) ? so : null;
 
     public static void Clear() => _map.Clear();
+
+    public static IReadOnlyDictionary<string, LiveConfigSO> All() => _map;
 }

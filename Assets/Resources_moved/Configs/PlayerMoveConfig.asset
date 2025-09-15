@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f5796f6d8b745eca204499b69cc2cb2, type: 3}
   m_Name: PlayerMoveConfig
   m_EditorClassIdentifier: 
-  _moveSpeed: 5
-  _version: 1.0.16
+  _key: cfg.player_move
+  _moveSpeed: 500
+  _version: 1.0.43
