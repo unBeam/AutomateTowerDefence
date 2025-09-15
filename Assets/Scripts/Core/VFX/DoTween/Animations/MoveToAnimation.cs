@@ -8,7 +8,7 @@ public class MoveToAnimation : VFXAnimation
     [SerializeField] private float _duration = 1f;
     [SerializeField] private bool _isRelative;
 
-    public override Sequence CreateSequence(Transform target)
+    public override Sequence CreateSequence(Transform target, IVFXParameters parameters = null)
     {
         Vector3 dest = _isRelative
             ? target.position + _endPosition

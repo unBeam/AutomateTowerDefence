@@ -11,6 +11,7 @@ namespace DI.Core
         {
             BindInstance(_vfxManager);
             BindInstance(_vfxConfig);
+            BindNewInstance<TestDILog>();
         }
     }
 }
