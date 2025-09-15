@@ -279,7 +279,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 55
 --- !u!114 &39981790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1177,6 +1177,7 @@ GameObject:
   - component: {fileID: 711763271}
   - component: {fileID: 711763270}
   - component: {fileID: 711763269}
+  - component: {fileID: 711763273}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -1300,6 +1301,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 711763267}
   m_CullTransparentMesh: 1
+--- !u!114 &711763273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 711763267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58414336f6708f44db0aa963da149b5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonClickHandler
+  _buttonName: testbutton
 --- !u!1 &755090118
 GameObject:
   m_ObjectHideFlags: 0
@@ -3093,6 +3107,7 @@ GameObject:
   - component: {fileID: 1927571076}
   - component: {fileID: 1927571075}
   - component: {fileID: 1927571078}
+  - component: {fileID: 1927571079}
   m_Layer: 0
   m_Name: DI
   m_TagString: Untagged
@@ -3130,6 +3145,7 @@ MonoBehaviour:
   _monoInstallers:
   - {fileID: 1927571075}
   - {fileID: 1927571078}
+  - {fileID: 1927571079}
   _installerPrefabs: []
   _autoRun: 1
   OnPreInstall:
@@ -3176,6 +3192,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DI.Core.VFXInstaller
   _vfxManager: {fileID: 59478419}
   _vfxConfig: {fileID: 11400000, guid: 4d23e7e254dfe314b8d4b5ca13f6fdb1, type: 2}
+--- !u!114 &1927571079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927571074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1625a2b51dcabe8468a0772852dc60e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::QuestInstaller
+  _catalog: {fileID: 11400000, guid: 2ff32d7cb3d03754b88fa565cec4ae6b, type: 2}
+  _questChainCatalog: {fileID: 11400000, guid: 34c90c1c860ae9440b91dbaf42c5d823, type: 2}
 --- !u!1 &2032116077
 GameObject:
   m_ObjectHideFlags: 0
@@ -3448,6 +3478,50 @@ RectTransform:
   m_AnchoredPosition: {x: -209, y: -119}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &2138724720
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2138724722}
+  - component: {fileID: 2138724721}
+  m_Layer: 0
+  m_Name: QuestStarter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2138724721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2138724720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e481716eb62a4d23935d94d360d51e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TestQuestStarter
+--- !u!4 &2138724722
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2138724720}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -3467,3 +3541,4 @@ SceneRoots:
   - {fileID: 800248461}
   - {fileID: 237546277}
   - {fileID: 510386410}
+  - {fileID: 2138724722}

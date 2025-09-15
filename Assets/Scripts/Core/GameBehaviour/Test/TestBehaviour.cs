@@ -12,13 +12,13 @@ public class TestBehaviour : GameBehaviour
 
     protected override void Start()
     {
-        
+        _testDILog.Log();
     }
 
     protected override void Tick()
     {
         _vfxManager.PlayEffect(VFXKeys.DustEffect, transform);
-        _testDILog.Log();
+        
     }
 
     protected override void PhysicTick()
