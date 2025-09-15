@@ -27,6 +27,30 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e682450e73d0763408a7ebee2cf60855
+    m_Address: cfg.player_move
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Config
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 91212d7558113b349851bb784ff5e834
+    m_Address: Configs/AudioConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Config
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 29c97ccbd0cf3d64c9c4180b4fd84ab6
+    m_Address: Configs/GameplayConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Config
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5fad49d7e0bce6646aa4bd7dd2c5aaf1
+    m_Address: Configs/PlayerMoveConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Config
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 92358d273e7743d498ac617d8542e0d0, type: 2}
   m_SchemaSet:

@@ -20,11 +20,12 @@ namespace Dialogues.Configs
         public string MissionId;
         public List<LocalizedStringEntry> LocalizedTexts = new List<LocalizedStringEntry>();
 
-        public string GetText(string lang)
+        public string GetLocalizedText(string langCode)
         {
-            for (int i = 0; i < LocalizedTexts.Count; i++)
-                if (LocalizedTexts[i].LanguageCode == lang) return LocalizedTexts[i].Text;
-            return string.Empty;
+            if (LocalizedTexts == null || LocalizedTexts.Count == 0)
+                return "[missing choice]";
+            LocalizedStringEntry entry = LocalizedTexts.FirstOrDefault(t => t.LanguageCode == langCode);
+            return entry != null ? entry.Text : "[missing choice]";
         }
     }
 
@@ -42,11 +43,12 @@ namespace Dialogues.Configs
         [field: SerializeField] public string Callback { get; private set; }
         [SerializeField] private List<LocalizedStringEntry> _localizedTexts = new List<LocalizedStringEntry>();
 
-        public string GetText(string lang)
+        public string GetLocalizedText(string langCode)
         {
-            for (int i = 0; i < _localizedTexts.Count; i++)
-                if (_localizedTexts[i].LanguageCode == lang) return _localizedTexts[i].Text;
-            return string.Empty;
+            if (_localizedTexts == null || _localizedTexts.Count == 0)
+                return "[missing text]";
+            LocalizedStringEntry entry = _localizedTexts.FirstOrDefault(t => t.LanguageCode == langCode);
+            return entry != null ? entry.Text : "[missing text]";
         }
     }
 }

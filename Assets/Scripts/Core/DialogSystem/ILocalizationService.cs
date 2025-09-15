@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using Dialogues.Configs;
 using Dialogues.Domain;
+using UniRx;
 
 namespace Dialogues.Runtime
 {
@@ -67,5 +68,13 @@ namespace Dialogues.Runtime
     public interface ICallbackDispatcher
     {
         UniTask DispatchAsync(string callback);
+    }
+    
+    public interface IDialogueService
+    {
+        IReadOnlyReactiveProperty<DialogueNodeAsset> Current { get; }
+        void Start(string scriptKey);
+        void Next();
+        void Choose(int index);
     }
 }

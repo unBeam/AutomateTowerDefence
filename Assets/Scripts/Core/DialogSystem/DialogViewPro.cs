@@ -22,14 +22,27 @@ namespace Dialogues.UI
         [SerializeField] private Button _exitButton;
         [SerializeField] private Slider _relationshipBar;
         [SerializeField] private TextMeshProUGUI _relationshipLabel;
-
+        [SerializeField] private InventoryPanel _inventoryPanel;
         private readonly List<Button> _pool = new List<Button>();
 
         public void Show()
         {
             if (_root != null) _root.SetActive(true);
         }
+        
+        public void ShowInventory(List<InventoryItemAsset> items, System.Action<InventoryItemAsset> onClick)
+        {
+            HideChoices();
+            if (_inventoryPanel != null)
+                _inventoryPanel.Show(items, onClick);
+        }
 
+        public void HideInventory()
+        {
+            if (_inventoryPanel != null)
+                _inventoryPanel.Hide();
+        }
+        
         public void Hide()
         {
             if (_root != null) _root.SetActive(false);
@@ -97,14 +110,16 @@ namespace Dialogues.UI
             ClearChoices();
             for (int i = 0; i < items.Count; i++)
             {
+                int index = i;
                 Button b = GetButton();
                 TextMeshProUGUI label = b.GetComponentInChildren<TextMeshProUGUI>();
-                if (label != null) label.text = items[i].text;
-                b.onClick.AddListener(() => items[i].onClick?.Invoke());
+                if (label != null) label.text = items[index].text;
+                b.onClick.AddListener(() => items[index].onClick?.Invoke());
                 b.gameObject.SetActive(true);
             }
             if (_nextButton != null) _nextButton.gameObject.SetActive(false);
         }
+
 
         public void HideChoices()
         {

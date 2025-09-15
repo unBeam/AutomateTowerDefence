@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = System.Random;
 
 namespace Dialogues.Configs
 {
@@ -9,12 +10,12 @@ namespace Dialogues.Configs
     {
         [SerializeField] private string _characterName;
         [SerializeField] private Sprite _defaultEmotion;
-        [SerializeField] private Sprite _happyEmotion;
-        [SerializeField] private Sprite _sadEmotion;
-        [SerializeField] private Sprite _thinkingEmotion;
-        [SerializeField] private Sprite _neutralEmotion;
-        [SerializeField] private Sprite _angryEmotion;
-        [SerializeField] private Sprite _surprisedEmotion;
+        [SerializeField] private List<Sprite> _happyEmotion = new();
+        [SerializeField] private List<Sprite> _sadEmotion = new();
+        [SerializeField] private List<Sprite> _thinkingEmotion = new();
+        [SerializeField] private List<Sprite> _neutralEmotion = new();
+        [SerializeField] private List<Sprite> _angryEmotion = new();
+        [SerializeField] private List<Sprite> _surprisedEmotion = new();
 
         [SerializeField] private List<LocalizedNameEntry> _localizedNames = new List<LocalizedNameEntry>();
         private Dictionary<string, string> _runtimeMap;
@@ -51,14 +52,15 @@ namespace Dialogues.Configs
 
         public Sprite GetEmotionSprite(CharacterEmotion emotion)
         {
+            Random rnd = new Random();
             switch (emotion)
             {
-                case CharacterEmotion.Happy: return _happyEmotion;
-                case CharacterEmotion.Sad: return _sadEmotion;
-                case CharacterEmotion.Thinking: return _thinkingEmotion;
-                case CharacterEmotion.Neutral: return _neutralEmotion;
-                case CharacterEmotion.Angry: return _angryEmotion;
-                case CharacterEmotion.Surprised: return _surprisedEmotion;
+                case CharacterEmotion.Happy: return _happyEmotion[rnd.Next(0, _happyEmotion.Count)];
+                case CharacterEmotion.Sad: return _sadEmotion[rnd.Next(0, _sadEmotion.Count)];
+                case CharacterEmotion.Thinking: return _thinkingEmotion[rnd.Next(0, _thinkingEmotion.Count)];
+                case CharacterEmotion.Neutral: return _neutralEmotion[rnd.Next(0, _neutralEmotion.Count)];
+                case CharacterEmotion.Angry: return _angryEmotion[rnd.Next(0,_angryEmotion.Count)];
+                case CharacterEmotion.Surprised: return _surprisedEmotion[rnd.Next(0, _surprisedEmotion.Count)];
                 default: return _defaultEmotion;
             }
         }

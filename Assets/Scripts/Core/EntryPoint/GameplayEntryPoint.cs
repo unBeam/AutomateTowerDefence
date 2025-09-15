@@ -3,9 +3,9 @@
 public class GameplayEntryPoint : MonoBehaviour
 {
     [SerializeField] private AudioHub _audioHub;
-
+    
     private GameMediator _mediator;
-
+    
     private async void Start()
     {
         _mediator = new GameMediator();

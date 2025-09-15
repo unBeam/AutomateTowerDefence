@@ -56,7 +56,7 @@ namespace Dialogues.Runtime
                 if (_typing)
                 {
                     CancelTyping();
-                    if (_current != null) _view.SetText(_current.GetText(_loc.CurrentLanguage));
+                    if (_current != null) _view.SetText(_current.GetLocalizedText(_loc.CurrentLanguage));
                 }
                 else
                 {
@@ -96,7 +96,7 @@ namespace Dialogues.Runtime
                 for (int i = 0; i < _current.Choices.Count; i++)
                 {
                     DialogueChoiceAsset ch = _current.Choices[i];
-                    string t = ch.GetText(_loc.CurrentLanguage);
+                    string t = ch.GetLocalizedText(_loc.CurrentLanguage);
                     System.Action a = () =>
                     {
                         if (!string.IsNullOrEmpty(ch.MissionId)) { }
@@ -183,7 +183,7 @@ namespace Dialogues.Runtime
 
         private string ResolveText(DialogueNodeAsset node)
         {
-            string raw = node.GetText(_loc.CurrentLanguage);
+            string raw = node.GetLocalizedText(_loc.CurrentLanguage);
             return raw.Replace("(PLAYER_NAME)", string.Empty);
         }
     }

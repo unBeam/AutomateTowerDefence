@@ -1,31 +1,54 @@
-﻿using Dialogues.Runtime;
-using Zenject;
+﻿using Dialogues.Configs;
+using UniRx;
 
-namespace Dialogues.App
+namespace Dialogues.Runtime
 {
-    public class DialogueService
+    public class DialogueService : IDialogueService
     {
         private readonly IDialogueRepository _repo;
-        private readonly ILocalizationService _loc;
-        private readonly IRelationshipService _rel;
-        private readonly IScriptSettingsRepository _settings;
-        private readonly ICallbackDispatcher _callbacks;
-        private readonly DiContainer _di;
+        private readonly ReactiveProperty<DialogueNodeAsset> _current = new ReactiveProperty<DialogueNodeAsset>();
 
-        public DialogueService(IDialogueRepository repo, ILocalizationService loc, IRelationshipService rel, IScriptSettingsRepository settings, ICallbackDispatcher callbacks, DiContainer di)
+        public IReadOnlyReactiveProperty<DialogueNodeAsset> Current => _current;
+
+        public DialogueService(IDialogueRepository repo)
         {
             _repo = repo;
-            _loc = loc;
-            _rel = rel;
-            _settings = settings;
-            _callbacks = callbacks;
-            _di = di;
         }
 
-        public DialoguePresenterPro CreatePresenter(Dialogues.UI.DialogViewPro view)
+        public void Start(string scriptKey)
         {
-            DialoguePresenterPro p = _di.Instantiate<DialoguePresenterPro>(new object[] { _repo, _loc, _rel, _settings, _callbacks, view });
-            return p;
+            DialogueNodeAsset node = _repo.GetStartNode(scriptKey);
+            _current.Value = node;
+        }
+
+        public void Next()
+        {
+            DialogueNodeAsset node = _current.Value;
+            if (node == null) return;
+            if (string.IsNullOrEmpty(node.NextId))
+            {
+                _current.Value = null;
+                return;
+            }
+            DialogueNodeAsset next = _repo.GetNode(node.ScriptKey, node.NextId);
+            _current.Value = next;
+        }
+
+        public void Choose(int index)
+        {
+            DialogueNodeAsset node = _current.Value;
+            if (node == null) return;
+            if (node.Choices == null) return;
+            if (index < 0) return;
+            if (index >= node.Choices.Count) return;
+            DialogueChoiceAsset choice = node.Choices[index];
+            if (string.IsNullOrEmpty(choice.NextId))
+            {
+                _current.Value = null;
+                return;
+            }
+            DialogueNodeAsset next = _repo.GetNode(node.ScriptKey, choice.NextId);
+            _current.Value = next;
         }
     }
 }
