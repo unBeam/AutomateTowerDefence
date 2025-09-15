@@ -17,23 +17,13 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: a838f7a01c9fec24a895163811011d88
   m_SerializeEntries:
-  - m_GUID: 5fad49d7e0bce6646aa4bd7dd2c5aaf1
-    m_Address: cfg.player_move
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: e682450e73d0763408a7ebee2cf60855
-    m_Address: cfg.prices
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: aa5a8ac56421b954989d722257f44ac3
     m_Address: sfx.click
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 91212d7558113b349851bb784ff5e834
-    m_Address: cfg.audio
+  - m_GUID: 7e8705ebe4d3758478c5f7d4caa91382
+    m_Address: sfx.close
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

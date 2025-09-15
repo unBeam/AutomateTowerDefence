@@ -23,3 +23,13 @@ MonoBehaviour:
     DefaultPitch: 1
     DefaultLoop: 0
     DefaultAddrOverride: sfx.click
+  - EventKey: Run
+    DefaultClipRef:
+      m_AssetGUID: 7e8705ebe4d3758478c5f7d4caa91382
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    DefaultVolume: 1
+    DefaultPitch: 1
+    DefaultLoop: 1
+    DefaultAddrOverride: sfx.click

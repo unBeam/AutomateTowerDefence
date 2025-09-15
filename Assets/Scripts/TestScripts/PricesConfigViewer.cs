@@ -1,4 +1,3 @@
-// Assets/Scripts/TestScripts/PricesConfigViewer.cs
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using TMPro;
@@ -31,7 +30,6 @@ public class PricesConfigViewer : MonoBehaviour
 
     private async UniTaskVoid BindAsync(CancellationToken ct)
     {
-        // ждём явный сигнал готовности бутстрапа
         if (!ConfigInitGate.IsReady)
             await ConfigInitGate.WaitReady().AttachExternalCancellation(ct);
 

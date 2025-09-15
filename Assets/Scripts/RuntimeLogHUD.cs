@@ -15,7 +15,7 @@ public class RuntimeLogHUD : MonoBehaviour
     private void OnEnable()
     {
         Application.logMessageReceived += HandleLog;
-        // принудительно перестроить в начале
+
         ForceRebuild();
         ScrollToBottom();
     }
