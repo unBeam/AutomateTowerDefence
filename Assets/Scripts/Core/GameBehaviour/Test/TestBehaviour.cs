@@ -1,6 +1,6 @@
 ﻿using Zenject;
 
-public class TestBehaviour : GameBehaviour
+public class TestBehaviour : AbstractGameBehaviour
 {
     private TestDILog _testDILog;
     

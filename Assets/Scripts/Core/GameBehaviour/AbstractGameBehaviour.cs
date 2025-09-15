@@ -1,7 +1,7 @@
 using UnityEngine;
 using Zenject;
 
-public abstract class GameBehaviour : MonoBehaviour
+public abstract class AbstractGameBehaviour : MonoBehaviour
 {
     protected VFXManager _vfxManager;
 
