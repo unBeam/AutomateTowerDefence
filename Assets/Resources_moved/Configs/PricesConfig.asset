@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9d83bd656294d2ebad160219a982ed9, type: 3}
   m_Name: PricesConfig
   m_EditorClassIdentifier: 
-  _coinPrice: 100
-  _gemPrice: 5
-  _version: local
+  _key: 
+  _coinPrice: 1
+  _gemPrice: 100
+  _version: 1.0.43

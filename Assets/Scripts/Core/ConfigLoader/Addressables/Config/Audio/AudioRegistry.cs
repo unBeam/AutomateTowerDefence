@@ -74,9 +74,20 @@ public sealed class AudioRegistry
     public async UniTask Apply(Dictionary<string, object> flat)
     {
         if (flat == null) return;
+        
+        object basePathObj, defaultExtObj;
+        if (flat.TryGetValue("Audio.BasePath", out basePathObj))
+        {
+            _cdnBase = basePathObj?.ToString() ?? string.Empty;
+        }
+        if (flat.TryGetValue("Audio.DefaultExt", out defaultExtObj))
+        {
+            string ext = defaultExtObj?.ToString();
+            _defaultExt = string.IsNullOrEmpty(ext) ? ".mp3" : (ext.StartsWith(".") ? ext : "." + ext);
+        }
 
         Dictionary<string, AudioDescriptor> incoming = new Dictionary<string, AudioDescriptor>(StringComparer.OrdinalIgnoreCase);
-
+        
         foreach (KeyValuePair<string, object> kv in flat)
         {
             string key = kv.Key ?? string.Empty;
@@ -141,23 +152,44 @@ public sealed class AudioRegistry
             }
         }
 
+        var loadingTasks = new List<UniTask>();
+
         foreach (AudioDescriptor d in incoming.Values)
         {
-            AudioClip clip = null;
+            // Створюємо асинхронну задачу для кожного дескриптора
+            // і додаємо її до списку.
+            loadingTasks.Add(ProcessSingleDescriptor(d));
+        }
 
-            string finalUrl = ResolveUrl(d);
+        // Чекаємо, поки ВСІ задачі завантаження завершаться
+        await UniTask.WhenAll(loadingTasks);
+        // --- КІНЕЦЬ ЗМІН ---
 
-            if (!string.IsNullOrEmpty(finalUrl))
-            {
-                clip = await GetOrDownloadClip(finalUrl);
-                if (clip == null && !string.IsNullOrEmpty(d.Addr))
-                    clip = await _addr.Load<AudioClip>(d.Addr);
-            }
-            else if (!string.IsNullOrEmpty(d.Addr))
-            {
+        Action changed = Changed;
+        if (changed != null) changed();
+    }
+
+    private async UniTask ProcessSingleDescriptor(AudioDescriptor d)
+    {
+        AudioClip clip = null;
+
+        string finalUrl = ResolveUrl(d);
+
+        if (!string.IsNullOrEmpty(finalUrl))
+        {
+            clip = await GetOrDownloadClip(finalUrl);
+            if (clip == null && !string.IsNullOrEmpty(d.Addr))
                 clip = await _addr.Load<AudioClip>(d.Addr);
-            }
+        }
+        else if (!string.IsNullOrEmpty(d.Addr))
+        {
+            clip = await _addr.Load<AudioClip>(d.Addr);
+        }
 
+        // Оскільки цей метод буде виконуватися в паралельних потоках,
+        // треба захистити доступ до словника _map
+        lock (_map)
+        {
             AudioDescriptor baseDesc;
             if (!_map.TryGetValue(d.EventKey, out baseDesc))
                 baseDesc = new AudioDescriptor { EventKey = d.EventKey };
@@ -173,9 +205,6 @@ public sealed class AudioRegistry
 
             _map[d.EventKey] = baseDesc;
         }
-
-        Action changed = Changed;
-        if (changed != null) changed();
     }
 
     private string ResolveUrl(AudioDescriptor d)
@@ -201,11 +230,33 @@ public sealed class AudioRegistry
             req.timeout = 10;
             req.SetRequestHeader("Cache-Control", "no-cache, no-store, max-age=0");
             req.SetRequestHeader("Pragma", "no-cache");
-            try { await req.SendWebRequest(); } catch { return null; }
-            if (req.result != UnityWebRequest.Result.Success) return null;
+        
+            Debug.Log($"[AudioRegistry] Downloading clip from URL: {req.url}"); // <-- ДОДАЙТЕ ЦЕЙ ЛОГ
+
+            try { await req.SendWebRequest(); } 
+            catch (System.Exception ex) 
+            {
+                Debug.LogError($"[AudioRegistry] Exception downloading clip: {ex.Message}"); // <-- ДОДАЙТЕ ЦЕЙ ЛОГ
+                return null; 
+            }
+
+            if (req.result != UnityWebRequest.Result.Success)
+            {
+                // <-- ДОДАЙТЕ ЦЕЙ ЛОГ
+                Debug.LogError($"[AudioRegistry] Failed to download clip. Error: {req.error}"); 
+                return null;
+            }
 
             AudioClip clip = DownloadHandlerAudioClip.GetContent(req);
-            if (clip != null) _urlCache[url] = clip;
+            if (clip != null)
+            {
+                Debug.Log($"[AudioRegistry] Clip downloaded and created successfully!"); // <-- ДОДАЙТЕ ЦЕЙ ЛОГ
+                _urlCache[url] = clip;
+            }
+            else
+            {
+                Debug.LogWarning($"[AudioRegistry] Download successful, but GetContent returned null."); // <-- ДОДАЙТЕ ЦЕЙ ЛОГ
+            }
             return clip;
         }
     }
