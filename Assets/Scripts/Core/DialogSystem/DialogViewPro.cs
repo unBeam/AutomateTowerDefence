@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
+using Zenject;
 
 namespace Dialogues.UI
 {
@@ -22,25 +24,28 @@ namespace Dialogues.UI
         [SerializeField] private Button _exitButton;
         [SerializeField] private Slider _relationshipBar;
         [SerializeField] private TextMeshProUGUI _relationshipLabel;
-        [SerializeField] private InventoryPanel _inventoryPanel;
+        [SerializeField] private InventoryView inventoryView;
         private readonly List<Button> _pool = new List<Button>();
+        [Inject] private InventoryPresenter _inventoryPresenter;
 
         public void Show()
         {
             if (_root != null) _root.SetActive(true);
+            
+            SetInventoryHandler(ShowInventory);
         }
         
-        public void ShowInventory(List<InventoryItemAsset> items, System.Action<InventoryItemAsset> onClick)
+        public void ShowInventory()
         {
             HideChoices();
-            if (_inventoryPanel != null)
-                _inventoryPanel.Show(items, onClick);
+            if (inventoryView != null)
+                _inventoryPresenter.Show();
         }
 
         public void HideInventory()
         {
-            if (_inventoryPanel != null)
-                _inventoryPanel.Hide();
+            if (inventoryView != null)
+                _inventoryPresenter.Hide();
         }
         
         public void Hide()

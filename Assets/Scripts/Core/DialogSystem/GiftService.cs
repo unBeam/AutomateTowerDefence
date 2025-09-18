@@ -22,11 +22,12 @@ namespace Dialogues.Runtime
             return true;
         }
 
-        public bool Give(string giftId, string characterName, string characterType)
+        public bool Give(GiftDefinitionAsset gift)
         {
-            GiftDefinitionAsset gift = _catalog != null ? _catalog.Get(giftId) : null;
+            //GiftDefinitionAsset gift = _catalog != null ? _catalog.Get(giftId) : null;
             if (gift == null) return false;
-            if (!CanGive(giftId, characterName, characterType)) return false;
+            string characterName = gift.CharacterName;
+            if (!CanGive(gift.GiftId, characterName, gift.CharacterType)) return false;
             _relationships.AddRP(characterName, gift.RP);
             return true;
         }
