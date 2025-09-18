@@ -20,7 +20,7 @@ MonoBehaviour:
   <IsChoicePoint>k__BackingField: 1
   <Choices>k__BackingField:
   - NodeId: 4
-    NextId: 
+    NextId: 5
     MissionId: 
     LocalizedTexts:
     - LanguageCode: ru

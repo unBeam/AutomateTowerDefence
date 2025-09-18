@@ -1,4 +1,5 @@
-﻿using Dialogues.Configs;
+﻿using System.Collections.Generic;
+using Dialogues.Configs;
 using Dialogues.Runtime;
 using Dialogues.UI;
 using UniRx;
@@ -41,7 +42,7 @@ public class DialogueStarter : MonoBehaviour
             _view.SetText(text);
             if (node.IsChoicePoint && node.Choices.Count > 0)
             {
-                System.Collections.Generic.List<(string, System.Action)> items = new System.Collections.Generic.List<(string, System.Action)>();
+                List<(string, System.Action)> items = new List<(string, System.Action)>();
                 for (int i = 0; i < node.Choices.Count; i++)
                 {
                     DialogueChoiceAsset choice = node.Choices[i];
