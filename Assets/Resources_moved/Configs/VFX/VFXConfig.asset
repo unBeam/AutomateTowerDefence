@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57b97f706e2842479aeda26d2e0a17a0, type: 3}
+  m_Name: VFXConfig
+  m_EditorClassIdentifier: Assembly-CSharp::VFXConfig
+  _effects:
+  - <Key>k__BackingField: ScalePunch
+    <ParticlePrefab>k__BackingField: {fileID: 0}
+    <TweenAnimation>k__BackingField: {fileID: 11400000, guid: 8c54aa9f292094446849580289ed1fc0, type: 2}
+  - <Key>k__BackingField: FadeAlpha
+    <ParticlePrefab>k__BackingField: {fileID: 0}
+    <TweenAnimation>k__BackingField: {fileID: 11400000, guid: 8142ae56a40cd504d9372e97b77879a7, type: 2}
+  - <Key>k__BackingField: MoveTo
+    <ParticlePrefab>k__BackingField: {fileID: 0}
+    <TweenAnimation>k__BackingField: {fileID: 11400000, guid: 152c48b8b9bd37b40a046365b405093c, type: 2}
+  - <Key>k__BackingField: RotateTo
+    <ParticlePrefab>k__BackingField: {fileID: 0}
+    <TweenAnimation>k__BackingField: {fileID: 11400000, guid: 6aa83ffd79c1293459a476e86a08e95d, type: 2}
+  - <Key>k__BackingField: Shake
+    <ParticlePrefab>k__BackingField: {fileID: 0}
+    <TweenAnimation>k__BackingField: {fileID: 11400000, guid: fddb3f9498651b046accad3014930c8e, type: 2}
+  - <Key>k__BackingField: Jump
+    <ParticlePrefab>k__BackingField: {fileID: 0}
+    <TweenAnimation>k__BackingField: {fileID: 11400000, guid: 48badd841bed51d459942ac05a00e962, type: 2}
+  - <Key>k__BackingField: DustEffect
+    <ParticlePrefab>k__BackingField: {fileID: 1209331056674052224, guid: edbd08c02ea8db0459011d60deddb55d, type: 3}
+    <TweenAnimation>k__BackingField: {fileID: 0}

@@ -36,9 +36,9 @@ public class CubeMover : GameBehaviour
 
     protected override void OnFixedTick()
     {
-        var v = _rb.velocity;
+        var v = _rb.linearVelocity;
         v.x = _axis * _speed;
-        _rb.velocity = v;
+        _rb.linearVelocity = v;
     }
 
     private void OnDisable()

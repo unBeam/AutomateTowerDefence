@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
+[ConfigSection("Audio")]
 [CreateAssetMenu(fileName = "AudioConfig", menuName = "Configs/Audio")]
 public class AudioConfigSO : LiveConfigSO
 {
