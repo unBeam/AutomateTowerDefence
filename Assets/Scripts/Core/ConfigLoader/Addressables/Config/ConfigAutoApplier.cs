@@ -14,7 +14,6 @@ public static class ConfigAutoApplier
         if (flat == null) return;
         
         Dictionary<string, Dictionary<string, object>> sections = SplitBySection(flat);
-        Debug.Log($"[Config] sections parsed: {sections.Count}");
 
         foreach (LiveConfigSO so in targets)
         {
@@ -28,12 +27,10 @@ public static class ConfigAutoApplier
             bool changed = false;
             if (data != null)
             {
-                Debug.Log($"[Config][{section}] applying {data.Count} keys…");
                 changed |= ApplyToObject(so, data);
             }
             else
             {
-                Debug.Log($"[Config][{section}] no section data found.");
             }
             
             object verObj = null;
@@ -50,7 +47,6 @@ public static class ConfigAutoApplier
             if (changed)
             {
                 t.GetMethod("RaiseChanged", BindingFlags.Instance | BindingFlags.NonPublic)?.Invoke(so, null);
-                Debug.Log($"[Config][{section}] applied & raised Changed.");
             }
         }
     }
@@ -84,12 +80,10 @@ public static class ConfigAutoApplier
         {
             if (TrySetMember(target, kv.Key, kv.Value))
             {
-                Debug.Log($"[Config][{target.GetType().Name}] set {kv.Key} = {kv.Value}");
                 any = true;
             }
             else
             {
-                Debug.LogWarning($"[Config][{target.GetType().Name}] key not found: {kv.Key}");
             }
         }
         return any;

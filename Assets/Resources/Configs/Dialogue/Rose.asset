@@ -13,11 +13,21 @@ MonoBehaviour:
   m_Name: Rose
   m_EditorClassIdentifier: 
   _characterName: Rose
-  _defaultEmotion: {fileID: 0}
-  _happyEmotion: []
-  _sadEmotion: []
-  _thinkingEmotion: []
-  _neutralEmotion: []
-  _angryEmotion: []
-  _surprisedEmotion: []
-  _localizedNames: []
+  _defaultEmotion: {fileID: 21300000, guid: e1cc4704191449247adf493686303f36, type: 3}
+  _happyEmotion:
+  - {fileID: 21300000, guid: e1cc4704191449247adf493686303f36, type: 3}
+  _sadEmotion:
+  - {fileID: 21300000, guid: e1cc4704191449247adf493686303f36, type: 3}
+  _thinkingEmotion:
+  - {fileID: 21300000, guid: e1cc4704191449247adf493686303f36, type: 3}
+  _neutralEmotion:
+  - {fileID: 21300000, guid: e1cc4704191449247adf493686303f36, type: 3}
+  - {fileID: 21300000, guid: ef572da3a8269074da5a15ff35905e1f, type: 3}
+  - {fileID: 21300000, guid: 1f04f5ad6f7232e4790df58bce1db2d2, type: 3}
+  _angryEmotion:
+  - {fileID: 21300000, guid: e1cc4704191449247adf493686303f36, type: 3}
+  _surprisedEmotion:
+  - {fileID: 21300000, guid: e1cc4704191449247adf493686303f36, type: 3}
+  _localizedNames:
+  - Language: 
+    LocalizedValue: 
