@@ -23,24 +23,22 @@ public class BallLauncher : AbstractGameBehaviour
     {
         if (_config == null) return;
 
-
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Debug.Log("Pressed button");
-            _rb.AddForce(Vector3.forward * _config.LaunchForce, ForceMode.VelocityChange);
+            Vector3 dir = (Vector3.forward + Vector3.up).normalized;
+            _rb.AddForce(dir * _config.LaunchForce, ForceMode.VelocityChange);
             _launched = true;
         }
     }
 
     private void OnConfigChanged()
     {
-        if (_config != null)
-            _rb.linearDamping = _config.Drag;
+        
     }
 
     private void OnCollisionEnter(Collision c)
     {
-        Debug.Log("Collision enter");
         if (_config == null) return;
         if (c.contacts.Length > 0)
         {
