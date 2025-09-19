@@ -21,6 +21,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Config
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3e267268ba1c2f845b7ab3f43941f444
+    m_Address: Assets/Resources_moved/Configs/BallConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Config
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5fad49d7e0bce6646aa4bd7dd2c5aaf1
     m_Address: Configs/PlayerMoveConfig
     m_ReadOnly: 0
