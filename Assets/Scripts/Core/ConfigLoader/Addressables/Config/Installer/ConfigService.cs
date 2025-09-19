@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Cysharp.Threading.Tasks;
+using UnityEngine;
 
 public class ConfigService
 {
@@ -36,8 +37,9 @@ public class ConfigService
         foreach (var cfg in configs)
         {
             if (cfg == null) continue;
-            _loaded[cfg.name] = cfg;
-            ConfigHub.Set(cfg.name, cfg);
+            _loaded[cfg.Key] = cfg;
+            Debug.Log("[ConfigService] Loaded config: " + cfg.Key);
+            ConfigHub.Set(cfg);  
         }
 
         var audioConfig = Get<AudioConfigSO>(nameof(AudioConfigSO));

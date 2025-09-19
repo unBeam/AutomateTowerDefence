@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PricesConfigViewer : MonoBehaviour
 {
-    [SerializeField] private string _configKey = "Prices";
+    [SerializeField] private string _configKey = "Pricesss";
     [SerializeField] private TMP_Text _text;
 
     private PricesConfigSO _config;
@@ -36,6 +36,9 @@ public class PricesConfigViewer : MonoBehaviour
         if (ct.IsCancellationRequested) return;
 
         _config = ConfigHub.Get<PricesConfigSO>(_configKey);
+        Debug.Log($"[PricesConfigViewer] Try get key={_configKey}, total={ConfigHub.All().Count}");
+        foreach (var kv in ConfigHub.All())
+            Debug.Log($"[ConfigHub] contains key={kv.Key}");
         if (_config == null)
         {
             Debug.LogWarning("[PricesConfigViewer] Config not found after ready.");

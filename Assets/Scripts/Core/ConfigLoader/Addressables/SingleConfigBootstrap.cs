@@ -36,7 +36,8 @@ public class SingleConfigBootstrap : MonoBehaviour
     {
         List<LiveConfigSO> configs = await _addr.LoadAll<LiveConfigSO>("Config");
         foreach (var cfg in configs)
-            ConfigHub.Set(cfg.name, cfg);
+            ConfigHub.Set(cfg);
+
     }
 
     private IEnumerable<LiveConfigSO> GetTargets()
