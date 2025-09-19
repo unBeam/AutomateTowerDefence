@@ -15,7 +15,6 @@ public class BallLaunchMediator : MonoBehaviour
         _config = ConfigHub.Get<BallConfigSO>("cfg.ball");
         if (_config == null)
         {
-            Debug.LogError("[BallLaunchMediator] BallConfigSO not found!");
             return;
         }
 
