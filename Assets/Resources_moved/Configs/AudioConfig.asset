@@ -36,3 +36,14 @@ MonoBehaviour:
     DefaultPitch: 1
     DefaultLoop: 1
     DefaultAddrOverride: sfx.click
+  - EventKey: Bounds
+    DefaultClipRef:
+      m_AssetGUID: 3f557516e0092684d810494aa5eb8dd4
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 1
+    DefaultVolume: 1
+    DefaultPitch: 1
+    DefaultLoop: 0
+    DefaultAddrOverride: sfx.bounds
