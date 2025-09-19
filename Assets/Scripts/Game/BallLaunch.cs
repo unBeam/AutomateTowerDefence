@@ -29,6 +29,8 @@ public class BallLauncher : AbstractGameBehaviour
             Vector3 dir = (Vector3.forward + Vector3.up).normalized;
             _rb.AddForce(dir * _config.LaunchForce, ForceMode.VelocityChange);
             _launched = true;
+            _audioHub.Play("Bounds");
+            _vfxManager.PlayEffect(VFXKeys.DustEffect, transform);
         }
     }
 
@@ -44,6 +46,8 @@ public class BallLauncher : AbstractGameBehaviour
         {
             Vector3 n = c.contacts[0].normal;
             _rb.linearVelocity = Vector3.Reflect(_rb.linearVelocity, n) * _config.Bounce;
+            _vfxManager.PlayEffect(VFXKeys.DustEffect, transform);
+            _audioHub.Play("Bounds");
         }
     }
 

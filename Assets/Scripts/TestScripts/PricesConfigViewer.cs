@@ -54,8 +54,6 @@ public class PricesConfigViewer : MonoBehaviour
         if (_text == null || _config == null) return;
 
         _text.text =
-            "Version: "   + _config.Version   + "\n" +
-            "Coin Price: " + _config.CoinPrice + "\n" +
-            "Gem Price: "  + _config.GemPrice;
+            "Version: "   + _config.Version;
     }
 }

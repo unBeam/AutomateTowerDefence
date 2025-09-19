@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class DistanceMeter : MonoBehaviour
+public class DistanceMeterTest : MonoBehaviour
 {
     [SerializeField] private string _localizationKey;
     [SerializeField] private int _amount;

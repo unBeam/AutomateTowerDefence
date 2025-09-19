@@ -4,11 +4,13 @@ using Zenject;
 public abstract class AbstractGameBehaviour : MonoBehaviour
 {
     protected VFXManager _vfxManager;
+    protected AudioHub _audioHub;
 
     [Inject]
-    protected virtual void Construct(VFXManager vfxManager)
+    protected virtual void Construct(VFXManager vfxManager, AudioHub audioHub)
     {
         _vfxManager = vfxManager;
+        _audioHub = audioHub;
     }
     
     protected virtual void Start() { }

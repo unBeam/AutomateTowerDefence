@@ -64,8 +64,8 @@ MonoBehaviour:
   - Key: UIGame/Distance
     Translations:
     - Language: uk
-      Text: "{0} \u043C\u0435\u0442\u0440\u0456\u0432"
+      Text: "\u0414\u0438\u0441\u0442\u0430\u043D\u0446\u0456\u044F: {0} \u043C\u0435\u0442\u0440\u0456\u0432"
     - Language: en
-      Text: '{0} meters'
+      Text: 'Distance: {0} meters'
     - Language: ru
-      Text: "{0} \u043C\u0435\u0442\u0440\u043E\u0432!!!!!"
+      Text: "\u0414\u0438\u0441\u0442\u0430\u043D\u0446\u0438\u044F: {0} \u043C\u0435\u0442\u0440\u043E\u0432"

@@ -32,5 +32,5 @@ MonoBehaviour:
     <ParticlePrefab>k__BackingField: {fileID: 0}
     <TweenAnimation>k__BackingField: {fileID: 11400000, guid: 48badd841bed51d459942ac05a00e962, type: 2}
   - <Key>k__BackingField: DustEffect
-    <ParticlePrefab>k__BackingField: {fileID: 1209331056674052224, guid: edbd08c02ea8db0459011d60deddb55d, type: 3}
+    <ParticlePrefab>k__BackingField: {fileID: 4304979692747150463, guid: 5f58988ac5541294fa340d3dc4527a25, type: 3}
     <TweenAnimation>k__BackingField: {fileID: 0}

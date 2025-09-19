@@ -54,6 +54,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d6103cb6650195c42827185df0f64979
+    m_Address: sfx.bounds
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e682450e73d0763408a7ebee2cf60855
     m_Address: cfg.player_move
     m_ReadOnly: 0
