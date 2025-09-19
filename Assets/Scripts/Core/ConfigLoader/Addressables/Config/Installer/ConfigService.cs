@@ -26,29 +26,35 @@ public class ConfigService
 
     public async UniTask Initialize()
     {
+        _loaded.Clear();
+        ConfigHub.Clear();
+        _audioRegistry.ReleaseUnusedAudio();
+
         await _addr.Initialize();
 
-        List<LiveConfigSO> configs = await _addr.LoadAll<LiveConfigSO>("Config");
+        var configs = await _addr.LoadAll<LiveConfigSO>("Config");
         foreach (var cfg in configs)
         {
             if (cfg == null) continue;
-            string key = cfg.name;
-            _loaded[key] = cfg;
-            ConfigHub.Set(key, cfg);
+            _loaded[cfg.name] = cfg;
+            ConfigHub.Set(cfg.name, cfg);
         }
-        
+
         var audioConfig = Get<AudioConfigSO>(nameof(AudioConfigSO));
         if (audioConfig != null)
-        {
             await _audioRegistry.LoadDefaults(audioConfig);
-        }
 
         var flatJson = await FetchFlatJson(_configUrl);
         if (flatJson != null)
         {
-            var genericTargets = _loaded.Values.Where(t => !(t is AudioConfigSO));
-            ConfigAutoApplier.Apply(flatJson, genericTargets, "Version");
-            
+            ConfigAutoApplier.Apply(flatJson, _loaded.Values, "Version");
+
+            string origin   = UrlUtil.GetOrigin(_configUrl);
+            string basePath = Flat.GetString(flatJson, "Audio.BasePath", "/audio/");
+            string defExt   = Flat.GetString(flatJson, "Audio.DefaultExt", ".mp3");
+            string cdnBase  = UrlUtil.Join(origin, basePath);
+
+            _audioRegistry.SetCdnBase(cdnBase, defExt);
             await _audioRegistry.Apply(flatJson);
         }
 
@@ -72,5 +78,15 @@ public class ConfigService
     public T Get<T>(string key) where T : LiveConfigSO
     {
         return _loaded.TryGetValue(key, out LiveConfigSO so) ? so as T : null;
+    }
+
+    public void ReleaseAll()
+    {
+        _addr.Clear(true);
+        _audioRegistry.ReleaseUnusedAudio();
+        ConfigHub.Clear();
+        _loaded.Clear();
+        UnityEngine.Resources.UnloadUnusedAssets();
+        System.GC.Collect();
     }
 }

@@ -13,6 +13,7 @@ namespace Core.ConfigLoader.Addressables.Config
             Container.Bind<IAddressablesLoader>()
                 .To<AddressablesLoader>()
                 .AsSingle();
+
             Container.Bind<IRemoteTextProvider>()
                 .To<UnityWebRequestTextProvider>()
                 .AsSingle()
@@ -21,7 +22,10 @@ namespace Core.ConfigLoader.Addressables.Config
             Container.Bind<ConfigService>()
                 .AsSingle()
                 .WithArguments(_configUrl);
-            Container.BindInterfacesTo<ConfigEntryPoint>().AsSingle().NonLazy();
+
+            Container.BindInterfacesTo<ConfigEntryPoint>()
+                .AsSingle()
+                .NonLazy();
         }
     }
 }

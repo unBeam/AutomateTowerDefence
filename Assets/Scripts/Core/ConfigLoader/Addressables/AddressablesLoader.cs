@@ -2,7 +2,6 @@
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class AddressablesLoader : IAddressablesLoader
 {
@@ -31,7 +30,8 @@ public class AddressablesLoader : IAddressablesLoader
             Debug.LogError($"[AddressablesLoader] Load<{typeof(T).Name}> {address}: {e}");
         }
 
-        if (asset != null && !(asset is LiveConfigSO)) // ⚠️ не кэшируем конфиги
+        // ⚠️ Конфиги не кэшируем, остальные — да
+        if (asset != null && !(asset is LiveConfigSO))
             _cache[address] = asset;
 
         return asset;
@@ -54,20 +54,24 @@ public class AddressablesLoader : IAddressablesLoader
         return false;
     }
 
-    public void Release(string address)
+    public void Release(string address, bool force = false)
     {
         if (_cache.TryGetValue(address, out var found))
         {
             Addressables.Release(found);
+            if (force) Resources.UnloadAsset(found);
             _cache.Remove(address);
         }
     }
 
-    public void Clear()
+    public void Clear(bool force = false)
     {
         foreach (var kv in _cache)
+        {
             Addressables.Release(kv.Value);
-
+            if (force && kv.Value != null)
+                Resources.UnloadAsset(kv.Value);
+        }
         _cache.Clear();
     }
 
@@ -83,7 +87,7 @@ public class AddressablesLoader : IAddressablesLoader
                 result.Add(asset);
         }
 
-        Addressables.Release(handle);
+        // ⚠️ Не делаем Release(handle), иначе ассеты подвиснут
         return result;
     }
 }

@@ -30,7 +30,6 @@ public class CubeMover : GameBehaviour
     protected override void OnTick()
     {
         bool pressed = Input.touchCount > 0 || Input.GetMouseButton(0);
-        if (pressed) _audio?.Play("Run");
         _axis = pressed ? 1f : 0f;
     }
 
