@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'Localization System/Assets/ServerData/Android/**'
+      - 'Localization System/Assets/ServerData/**'
       - 'firebase.json'
       - '.firebaserc'
       - '.github/workflows/**'
