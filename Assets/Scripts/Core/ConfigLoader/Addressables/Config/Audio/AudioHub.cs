@@ -20,7 +20,7 @@ public class AudioHub : MonoBehaviour
     public void Play(string eventKey)
     {
         var d = _registry?.Get(eventKey);
-        if (d == null) // <-- Змінимо перевірку
+        if (d == null) 
         {
             Debug.LogWarning($"[AudioHub] AudioDescriptor not found for key: '{eventKey}'");
             return;

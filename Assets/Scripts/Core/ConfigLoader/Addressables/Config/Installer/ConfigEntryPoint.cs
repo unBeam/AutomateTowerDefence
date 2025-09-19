@@ -15,7 +15,7 @@ public class ConfigEntryPoint : IInitializable
     public async void Initialize()
     {
         await _cfg.Initialize();
-        
+
         foreach (var kv in _cfg.All())
         {
             var type = kv.Value.GetType();
