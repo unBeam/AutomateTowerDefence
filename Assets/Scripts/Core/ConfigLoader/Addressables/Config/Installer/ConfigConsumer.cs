@@ -1,4 +1,4 @@
-﻿using Cysharp.Threading.Tasks;
+﻿using System.Linq;
 using UnityEngine;
 
 public abstract class ConfigConsumer<T> : MonoBehaviour where T : LiveConfigSO
@@ -8,7 +8,7 @@ public abstract class ConfigConsumer<T> : MonoBehaviour where T : LiveConfigSO
     private async void Awake()
     {
         await ConfigInitGate.WaitReady();
-        Config = ConfigHub.Get<T>(typeof(T).Name);
+        Config = ConfigHub.All().Values.FirstOrDefault(x => x is T) as T;
         if (Config != null) OnConfigReady();
     }
 

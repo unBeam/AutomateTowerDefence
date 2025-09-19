@@ -5,6 +5,7 @@ namespace Core.ConfigLoader.Addressables.Config
 {
     public class ConfigInstaller : MonoInstaller
     {
+        [SerializeField] private BallLauncher _ballLauncher;
         [SerializeField] private string _configUrl =
             "https://testconfigs-c3b83.web.app/configs/Config.json";
 

@@ -5,10 +5,11 @@ public static class ConfigHub
 {
     private static readonly Dictionary<string, LiveConfigSO> _map = new();
 
-    public static void Set(string key, LiveConfigSO so)
+    public static void Set(LiveConfigSO so)
     {
-        if (string.IsNullOrEmpty(key) || so == null) return;
-        _map[key] = so;
+        if (so == null || string.IsNullOrEmpty(so.Key)) return;
+        Debug.Log($"[ConfigHub] Set key={so.Key}, type={so.GetType().Name}");
+        _map[so.Key] = so;
     }
 
     public static T Get<T>(string key) where T : LiveConfigSO
@@ -21,6 +22,5 @@ public static class ConfigHub
         => _map.TryGetValue(key, out var so) ? so : null;
 
     public static void Clear() => _map.Clear();
-
     public static IReadOnlyDictionary<string, LiveConfigSO> All() => _map;
 }

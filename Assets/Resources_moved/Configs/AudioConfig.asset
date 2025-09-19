@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e08a6bb448b49b495f77b5191b30358, type: 3}
   m_Name: AudioConfig
   m_EditorClassIdentifier: 
+  _key: AudioConfig
   _events:
   - EventKey: Click
     DefaultClipRef:
       m_AssetGUID: aa5a8ac56421b954989d722257f44ac3
       m_SubObjectName: 
       m_SubObjectType: 
+      m_SubObjectGUID: 
       m_EditorAssetChanged: 0
     DefaultVolume: 1
     DefaultPitch: 1
@@ -28,6 +30,7 @@ MonoBehaviour:
       m_AssetGUID: 7e8705ebe4d3758478c5f7d4caa91382
       m_SubObjectName: 
       m_SubObjectType: 
+      m_SubObjectGUID: 
       m_EditorAssetChanged: 0
     DefaultVolume: 1
     DefaultPitch: 1
