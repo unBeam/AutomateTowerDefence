@@ -56,7 +56,7 @@ namespace Dialogues.Runtime
     public interface IGiftService
     {
         bool CanGive(string giftId, string characterName, string characterType);
-        bool Give(string giftId, string characterName, string characterType);
+        bool Give(GiftDefinitionAsset gift);
     }
 
     public interface IMoodService

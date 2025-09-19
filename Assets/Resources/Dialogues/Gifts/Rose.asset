@@ -15,7 +15,7 @@ MonoBehaviour:
   GiftId: Rose
   Cost: 50
   Type: 0
-  RP: 0
+  RP: 10
   CharacterName: Rose
   CharacterType: 
   Description: 

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19af7508dd2d4e7090efcf131457ce5d, type: 3}
+  m_Name: InventoryItem
+  m_EditorClassIdentifier: Assembly-CSharp::InventoryItemAsset
+  <ItemId>k__BackingField: gift
+  <DisplayName>k__BackingField: Rose
+  <Icon>k__BackingField: {fileID: 21300000, guid: ef572da3a8269074da5a15ff35905e1f, type: 3}
+  <GiftDefinition>k__BackingField: {fileID: 11400000, guid: f574bb378f15de546904c392f122d59a, type: 2}

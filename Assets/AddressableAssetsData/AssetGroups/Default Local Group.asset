@@ -21,17 +21,16 @@ MonoBehaviour:
     m_SerializedLabels:
     - Config
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 3e267268ba1c2f845b7ab3f43941f444
-    m_Address: cfg.ball
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Config
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5fad49d7e0bce6646aa4bd7dd2c5aaf1
     m_Address: Configs/PlayerMoveConfig
     m_ReadOnly: 0
     m_SerializedLabels:
     - Config
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 765ced668727fe74880f53d2820e19fd
+    m_Address: LocalizationData
+    m_ReadOnly: 0
+    m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7e8705ebe4d3758478c5f7d4caa91382
     m_Address: sfx.close
@@ -50,7 +49,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e682450e73d0763408a7ebee2cf60855
-    m_Address: cfg.prices
+    m_Address: cfg.player_move
     m_ReadOnly: 0
     m_SerializedLabels:
     - Config
