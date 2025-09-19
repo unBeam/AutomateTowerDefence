@@ -27,6 +27,11 @@ MonoBehaviour:
     m_SerializedLabels:
     - Config
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 765ced668727fe74880f53d2820e19fd
+    m_Address: LocalizationData
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7e8705ebe4d3758478c5f7d4caa91382
     m_Address: sfx.close
     m_ReadOnly: 0
