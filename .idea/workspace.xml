@@ -1,37 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="9f23fa2b-544d-4ab4-8924-cfad7c909379" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/ReflectionBaking/Zenject-ReflectionBaking.csproj.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Zenject-Signals.csproj.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/Source/Zenject.csproj.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Telegram Desktop.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Telegram Desktop/localization_system_4a5c3_firebase_adminsdk_fbsvc_d588dcf605.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Telegram Desktop/localization_system_4a5c3_firebase_adminsdk_fbsvc_d588dcf605.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Video.renderTexture" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Video.renderTexture.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/desktop.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/desktop.ini.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/~$дание на ДП — копия.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/~$дание на ДП — копия.docx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources_moved/Sounds/penis.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources_moved/Sounds/penis.mp3.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/BallLaunchController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/BallLaunchController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Video.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Video.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/intro.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/intro.mp4.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AddressableAssetGroupSortSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AddressableAssetGroupSortSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AddressableAssetSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AddressableAssetSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Default Local Group.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Default Local Group.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Localization.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Localization.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources_moved/Configs/AudioConfig.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources_moved/Configs/AudioConfig.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources_moved/Configs/BallConfig.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources_moved/Configs/BallConfig.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/BallLaunch.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/BallLaunch.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Configs/BallConfigSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Configs/BallConfigSO.cs" afterDir="false" />
-    </list>
+    <list default="true" id="9f23fa2b-544d-4ab4-8924-cfad7c909379" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,7 +24,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Merging Kyrylo",
+    "git-widget-placeholder": "Kyrylo",
     "kotlin-language-version-configured": "true"
   }
 }]]></component>
