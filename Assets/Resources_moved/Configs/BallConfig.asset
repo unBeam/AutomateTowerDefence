@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: BallConfig
   m_EditorClassIdentifier: Assembly-CSharp::BallConfigSO
   _key: cfg.ball
-  _launchForce: 10
-  _drag: 0.5
-  _bounce: 1.2
-  _version: local
+  _launchForceLevel1: 10
+  _launchForceLevel2: 50
+  _launchForceLevel3: 500
+  _drag: 0
+  _bounce: 100
+  _version: 1.0.50
